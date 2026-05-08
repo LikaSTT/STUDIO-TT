@@ -269,11 +269,17 @@
     font-size: 0.9rem;
 }
 #step6 .success-checklist li::before {
-    content: "✅" !important;
+     content: "";
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%232c5e3a" width="16" height="16"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin-right: 8px;
     position: absolute;
     left: 0;
-    top: 0;
-    color: #2c5e3a;
+    top: 2px;
 }
         }
     </style>
@@ -541,7 +547,7 @@
     </div>
     <div class="stage-content">
         <p>Звонок прошёл успешно, если Вы можете ответить на эти вопросы:</p>
-        
+
         <ul class="success-checklist">
             <li>Имя, ЛПР/ЛФР</li>
             <li>Участвуют в выставках? Если да, то в каких?</li>
