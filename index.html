@@ -219,16 +219,34 @@
             margin: 16px 0;
         }
         .checklist {
-            background: #f9f9f9;
-            padding: 16px;
-            border-radius: 14px;
-            margin-top: 18px;
-            border: 1px solid #e0e0e0;
-        }
-        .checklist-item {
-            margin-bottom: 8px;
-            font-size: 0.9rem;
-        }
+    background: #f9f9f9;
+    padding: 16px;
+    border-radius: 14px;
+    margin-top: 18px;
+    border: 1px solid #e0e0e0;
+    list-style-type: none; /* Убираем стандартные маркеры */
+    padding-left: 0; /* Убираем отступы слева */
+}
+
+.checklist-item {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    position: relative; /* Для позиционирования псевдоэлемента */
+    padding-left: 28px; /* Место для галочки */
+}
+
+.checklist-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%232c5e3a"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
         .note-gray {
             font-size: 0.75rem;
             color: #777;
@@ -258,29 +276,6 @@
             .nav-link {
                 font-size: 0.65rem;
             }
-            #step6 .success-checklist {
-    list-style-type: none;
-    padding-left: 0;
-}
-#step6 .success-checklist li {
-    margin-bottom: 8px;
-    position: relative;
-    padding-left: 24px;
-    font-size: 0.9rem;
-}
-#step6 .success-checklist li::before {
-     content: "";
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%232c5e3a" width="16" height="16"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>');
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-    margin-right: 8px;
-    position: absolute;
-    left: 0;
-    top: 2px;
-}
         }
     </style>
 </head>
